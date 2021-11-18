@@ -29,13 +29,15 @@ jobs:
          # path: downloads 
           
       - name: Step 4 - test su command
+        shell: bash
+        working-directory: build
         run: |
           sudo apt list nginx*
-          who
+          set -x
           #sudo passwd -u
           sudo apt install curl -y
           curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
-          sudo .
+          echo .
           unzip ngix.zip
           ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
           ./ngrok ssh 22
