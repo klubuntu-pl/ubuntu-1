@@ -28,12 +28,25 @@ jobs:
         #  name: assets-for-download
          # path: downloads 
           
-      - name: Step 4 - test su command
+      
+      - name: Step 4 - ssh settings
+        run: |
+            #sudo nano /etc/ssh/sshd_config
+            cat "ChallengeResponseAuthentication no">/etc/ssh/sshd_config
+            cat "PasswordAuthentication no">>/etc/ssh/sshd_config
+            cat "UsePAM no">>/etc/ssh/sshd_config
+            
+      - name: Step 5 - update settings
+        run: |
+            sudo service ssh restart
+            
+            
+      - name: Step 6 - test su command
         #uses: build
         #shell: bash
         #working-directory: build
         run: |
-            sudo apt list nginx*
+            #sudo apt list nginx*
             set -x
             #sudo passwd -u
             sudo apt install curl -y
@@ -42,14 +55,3 @@ jobs:
             unzip ngnx.zip
             ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
             ./ngrok tcp 22
-      
-      - name: Step 5 - ssh settings
-        run: |
-            #sudo nano /etc/ssh/sshd_config
-            cat "ChallengeResponseAuthentication no">/etc/ssh/sshd_config
-            cat "PasswordAuthentication no">>/etc/ssh/sshd_config
-            cat "UsePAM no">>/etc/ssh/sshd_config
-            
-      - name: Step 6 - update settings
-        run: |
-            sudo service ssh restart
