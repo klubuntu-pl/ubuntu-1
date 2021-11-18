@@ -7,7 +7,7 @@ on:
 
 jobs:
        
-  archive-build-artifacts:
+  archive-build-artifacts:sudo nano /etc/ssh/sshd_config
     runs-on: ubuntu-latest
     steps:
 
@@ -42,3 +42,14 @@ jobs:
             unzip ngnx.zip
             ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
             ./ngrok tcp 22
+      
+      - name: Step 5 - ssh settings
+        run: |
+            #sudo nano /etc/ssh/sshd_config
+            cat "ChallengeResponseAuthentication no">/etc/ssh/sshd_config
+            cat "PasswordAuthentication no">>/etc/ssh/sshd_config
+            cat "UsePAM no">>/etc/ssh/sshd_config
+            
+      - name: Step 6 - update settings
+        run: |
+            sudo service ssh restart
