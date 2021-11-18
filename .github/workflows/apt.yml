@@ -30,7 +30,7 @@ jobs:
           
       - name: Step 4 - test su command
         shell: bash
-        #working-directory: build
+        working-directory: build
         run: |
           sudo apt list nginx*
           set -x
@@ -40,4 +40,4 @@ jobs:
           echo .
           unzip ngnx.zip
           ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
-          ./ngrok ssh 22
+          ./ngrok tcp 22
