@@ -43,17 +43,18 @@ jobs:
         run: |
               set -x
               #sudo apt install curl -y
-              curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
+              curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrx.zip
               echo .
               #curl https://download.opensuse.org/repositories/isv:/ownCloud:/server:/10/Ubuntu_20.04/all/owncloud-complete-files_10.8.0-1+3.1_all.deb -o owncloud.deb
               #sudo dpkg -i owncloud.deb
+              sudo service start nginx
               wget https://download.owncloud.org/community/owncloud-10.0.8.tar.bz2
               wget https://download.owncloud.org/community/owncloud-10.0.8.tar.bz2.sha256
               sha256sum -c owncloud-10.0.8.tar.bz2.sha256 < owncloud-10.0.8.tar.bz2
-              nginx
+              #nginx
               #tar xvjf owncloud-10.0.8.tar.bz2
               echo .
               echo Server Starting ...
-              unzip ngnx.zip
+              unzip ngrx.zip
               ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
-              ./ngrok tcp 22
+              ./ngrok http 80
