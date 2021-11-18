@@ -42,7 +42,8 @@ jobs:
         #working-directory: build
         run: |
               set -x
-              ls /var/www/* -a
+              ls /var/www/html -a
+              echo test >> /var/www/html/index.html
               #sudo apt install curl -y
               curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrx.zip
               echo .
