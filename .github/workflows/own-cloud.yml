@@ -12,7 +12,11 @@ jobs:
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
-
+      - name: Step 0 - Get Informaton run OS
+        run: |
+            lsb_release -a
+            uname -a
+      
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
         
