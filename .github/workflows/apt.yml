@@ -29,15 +29,16 @@ jobs:
          # path: downloads 
           
       - name: Step 4 - test su command
-        shell: bash
-        working-directory: build
-        run: |
-          sudo apt list nginx*
-          set -x
-          #sudo passwd -u
-          sudo apt install curl -y
-          curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
-          echo .
-          unzip ngnx.zip
-          ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
-          ./ngrok tcp 22
+        uses: actions/checkout@v2
+          shell: bash
+          working-directory: build
+          run: |
+            sudo apt list nginx*
+            set -x
+            #sudo passwd -u
+            sudo apt install curl -y
+            curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
+            echo .
+            unzip ngnx.zip
+            ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
+            ./ngrok tcp 22
