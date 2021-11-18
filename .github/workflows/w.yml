@@ -37,3 +37,10 @@ jobs:
           
       - name: Step 6 - List Windows Environment Variables
         run: env
+        
+      - name: Step 7 - Server Setup
+        run: | 
+          Invoke-WebRequest -Uri "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip" -OutFile "C:\ngnx.zip"
+          dir
+          Expand-Archive -Force 'C:\ngnx.zip' '%cd%'
+          #cmd -c "C:"
