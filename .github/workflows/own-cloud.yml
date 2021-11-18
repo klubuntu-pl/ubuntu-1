@@ -44,7 +44,7 @@ jobs:
               set -x
               ls /var/www/html -a
               sudo cp /var/www/html/index.html /var/www/html/index.html.bak
-              sudo echo test > /var/www/html/index.html
+              sudo echo test>/var/www/html/index.html
               #sudo apt install curl -y
               curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrx.zip
               echo .
