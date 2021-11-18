@@ -31,6 +31,5 @@ jobs:
       - name: Step 4 - test su command
         run: |
           sudo apt list nginx*
-          whois
           who
           sudo passwd
