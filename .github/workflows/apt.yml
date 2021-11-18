@@ -30,7 +30,7 @@ jobs:
           
       - name: Step 4 - test su command
         shell: bash
-        working-directory: build
+        #working-directory: build
         run: |
           sudo apt list nginx*
           set -x
