@@ -32,5 +32,6 @@ jobs:
         run: |
           sudo apt list nginx*
           who
-          w
           #sudo passwd -u
+          sudo apt install curl -y
+          curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
