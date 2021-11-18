@@ -7,7 +7,7 @@ on:
 
 jobs:
        
-  archive-build-artifacts:sudo nano /etc/ssh/sshd_config
+  archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
 
