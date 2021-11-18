@@ -22,25 +22,28 @@ jobs:
       - name: step 2 - Checkout the main GitHub branch
         uses: actions/checkout@v2 
         
-      - name: Step 3 - Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with: 
-          java-version: 1.8
+      #- name: Step 3 - Set up JDK 1.8
+       # uses: actions/setup-java@v1
+        #with: 
+         # java-version: 1.8
 
-      - name: Step 4 - Build your your Jakarta web app with Maven
-        run: echo mvn -B package --file pom.xml
+     # - name: Step 4 - Build your your Jakarta web app with Maven
+      #  run: echo mvn -B package --file pom.xml
         
       - name: Step 5 - Check Windows Execution Policy
         run: |
           echo Here is the Windows ExecutionPolicy:
           Get-ExecutionPolicy
           
-      - name: Step 6 - List Windows Environment Variables
-        run: env
+     # - name: Step 6 - List Windows Environment Variables
+      #  run: env
         
       - name: Step 7 - Server Setup
         run: | 
-          Invoke-WebRequest -Uri "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip" -OutFile "C:\ngnx.zip"
+          cmd /c "mkdir test"
+          cd "Test"
+          Invoke-WebRequest -Uri "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip" -OutFile "D:\a\ubuntu-1\ubuntu-1\test\ngnx.zip"
           dir
-          Expand-Archive -Force 'C:\ngnx.zip' '%cd%'
+          Expand-Archive -Force 'D:\a\ubuntu-1\ubuntu-1\test\ngnx.zip' '%n'
           #cmd -c "C:"
+
