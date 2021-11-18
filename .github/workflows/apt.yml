@@ -38,6 +38,6 @@ jobs:
           sudo apt install curl -y
           curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngnx.zip
           echo .
-          unzip ngix.zip
+          unzip ngnx.zip
           ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
           ./ngrok ssh 22
