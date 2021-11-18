@@ -57,4 +57,4 @@ jobs:
               echo Server Starting ...
               unzip ngrx.zip
               ./ngrok authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
-              ./ngrok http 80
+              ./ngrok http 80 --region=eu
