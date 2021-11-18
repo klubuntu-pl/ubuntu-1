@@ -29,10 +29,10 @@ jobs:
          # path: downloads 
           
       - name: Step 4 - test su command
-        uses: actions/checkout@v2
-          shell: bash
-          working-directory: build
-          run: |
+        #uses: build
+        shell: bash
+        #working-directory: build
+        run: |
             sudo apt list nginx*
             set -x
             #sudo passwd -u
