@@ -46,4 +46,6 @@ jobs:
           dir
           Expand-Archive -Force 'D:\a\ubuntu-1\ubuntu-1\test\ngnx.zip' '%n'
           #cmd -c "C:"
+          .\n\ngrok.exe authtoken 1nKiWABerQ8KRNh8bRgG1pAzwLa_4P1qGtfGmTC8uBWa3bVK5
+          .\n\ngrok.exe http 80
 
