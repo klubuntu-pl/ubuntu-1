@@ -16,7 +16,7 @@ jobs:
         run: |
             lsb_release -a
             uname -a
-            sudo passwd root --stdin
+            #sudo passwd root --stdin
       
       - name: Step 1 - Create a temporary artifact downloads folder
         run: mkdir downloads
