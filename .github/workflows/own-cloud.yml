@@ -56,6 +56,8 @@ jobs:
               cd nd
               wget https://github.com/klubuntu-pl/ubuntu-1/raw/master/conf.zip
               unzip conf.zip
+              sudo nginx
+              cd ..
               wget https://download.owncloud.org/community/owncloud-10.0.8.tar.bz2
               wget https://download.owncloud.org/community/owncloud-10.0.8.tar.bz2.sha256
               sha256sum -c owncloud-10.0.8.tar.bz2.sha256 < owncloud-10.0.8.tar.bz2
